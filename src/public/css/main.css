@@ -1,0 +1,201 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400;500&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #7d2ae8;
+  padding: 10%;
+}
+
+.main {
+  position: relative;
+  max-width: 850px;
+  width: 100%;
+  background: #fff;
+  padding: 40px 30px;
+  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+}
+
+.main .cover-box {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  background-color: #7d2ae8;
+  top: 0;
+  left: 50%;
+  z-index: 99;
+  transition: all 0.25s ease-in-out;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -ms-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+}
+
+.main #slide:checked ~ .cover-box {
+  transform: translate(-100%);
+  -webkit-transform: translate(-100%);
+  -moz-transform: translate(-100%);
+  -ms-transform: translate(-100%);
+  -o-transform: translate(-100%);
+}
+
+input#slide {
+  display: none;
+}
+
+.text {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.text-1,
+.text-2 {
+  color: white;
+  font-size: 2.5ch;
+  font-weight: 567;
+  text-align: center;
+}
+
+.main .form {
+  height: 100%;
+  width: 100%;
+  background: #fff;
+}
+
+.form-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.login-form-wrapper,
+.signup-form-wrapper {
+  width: calc(100% / 2 - 25px);
+}
+
+.login-form-wrapper h3,
+.signup-form-wrapper h3 {
+  font-size: 3ch;
+  font-weight: 756;
+  color: #333;
+}
+
+.login-form-wrapper > *,
+.signup-form-wrapper > * {
+  margin-top: 5px;
+}
+
+input {
+  position: relative;
+  height: 35px;
+  width: 100%;
+  padding: 0 50px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  color: black;
+  font-size: 1.5ch;
+  font-weight: 567;
+}
+
+i {
+  font-size: 25px;
+  font-weight: 100;
+  position: absolute;
+  padding: 5px 0 0 10px;
+  color: #7d2ae8;
+}
+
+.submit {
+  color: white;
+  background: rgb(125, 42, 232);
+  margin-top: 15px;
+  font-size: 1.5ch;
+  font-weight: 567;
+
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.submit:hover {
+  background: rgb(125, 42, 232, 0.8);
+}
+
+input:focus {
+  border-color: #7d2ae8;
+}
+
+.forgot-password {
+  margin-top: 20px;
+}
+
+.forgot-password a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.5ch;
+  font-weight: 567;
+}
+
+.forgot-password a:hover {
+  color: #7d2ae8;
+  text-decoration: underline;
+}
+
+.new-user,
+.existing-user {
+  color: black;
+  font-size: 1.5ch;
+  font-weight: 567;
+  margin-top: 15px;
+}
+
+.new-user label,
+.existing-user label {
+  color: rgb(125, 42, 232);
+}
+
+.new-user label:hover,
+.existing-user label:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .main .cover-box {
+    display: none;
+  }
+  .form-wrapper .login-form-wrapper,
+  .form-wrapper .signup-form-wrapper {
+    width: 100%;
+  }
+  .form-wrapper .signup-form-wrapper {
+    display: none;
+  }
+  .main #slide:checked ~ form .signup-form-wrapper {
+    display: block;
+  }
+  .main #slide:checked ~ form .login-form-wrapper {
+    display: none;
+  }
+}

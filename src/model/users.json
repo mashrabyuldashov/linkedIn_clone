@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Mashrab",
+        "last_name": "Yoldashov",
+        "email": "mashrabyoldashov@gmail.com",
+        "password": "1223",
+        "profile_photo": "https://media-exp1.licdn.com/dms/image/C4D03AQHWyxPmBnIVTg/profile-displayphoto-shrink_800_800/0/1652197627319?e=1658361600&v=beta&t=JiYcNuekBJ2r23bbJ-39nJ-evsIV3LXdPJLK9EM9Hu4.jpg",
+        "role": "admin"
+    },
+    {
+        "id": 2,
+        "name": "Tohir",
+        "last_name": "Doniyorov",
+        "email": "tohirdoniyorov@gmail.com",
+        "password": "2003",
+        "profile_photo": "http://localhost:9000/1651947584021.jfif",
+        "role": "user"
+    }
+]

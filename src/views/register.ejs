@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="main">
+
+        <input type="checkbox" name="slide" id="slide">
+        <div class="cover-box">
+            <div class="text">
+                <div class="text-1">Take more Photos!</div>
+                <div class="text-2">Embrace your Weirdness</div>
+            </div>
+        </div>
+        <div>
+
+            <div class="form-wrapper">
+
+                <!--Login Form-->
+                <form action="/register" method="POST" enctype="application/x-www-form-urlencoded" id="loginForm" class="login-form-wrapper">
+                    <h3>Login</h3>
+
+                    <div class="email-container">
+                        <label for="name">
+                            <i class="bi bi-person-lines-fill"></i>
+                        </label>
+                        <input type="text" name="name" id="name" placeholder="name" required>
+                    </div>
+
+                    <div class="password-container">
+                        <label for="password">
+                            <i class="bi bi-key"></i>
+                        </label>
+                        <input type="password" name="password" id="password" placeholder="Password" required>
+                    </div>
+
+                    <div class="forgot-password">
+                        <a href="#">Forgot Password?</a>
+                    </div>
+
+                    <div class="login-btn-container">
+                        <input type="submit" value="Login" class="submit">
+                    </div>
+
+                    <div class="new-user">
+                        New user? <label for="slide">Sign Up now</label>
+                    </div>
+                </form>
+
+
+                <!--SignUp From-->
+                <form action="/signin" method="POST" enctype="application/x-www-form-urlencoded" class="signup-form-wrapper">
+                    <h3>Sign Up</h3>
+
+                    <div class="signup-name">
+                        <label for="signup-name">
+                            <i class="bi bi-person-lines-fill"></i>
+                        </label>
+                        <input type="text" name="name" placeholder="Name">
+                    </div>
+
+                    <div class="signup-email">
+                        <label for="signup-email">
+                            <i class="bi bi-envelope"></i>
+                        </label>
+                        <input type="email" name="email" id="signup-email" placeholder="E-mail">
+                    </div>
+
+                    <div class="signup-password">
+                        <label for="email">
+                            <i class="bi bi-key"></i>
+                        </label>
+                        <input type="password" name="password" placeholder="Password">
+                    </div>
+
+                    <div class="signup-btn-container">
+                        <input type="submit" value="Sign Up" class="submit">
+                    </div>
+
+                    <div class="existing-user">
+                        Have account? <label for="slide">Login now</label>
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script src="/js/register.js"></script>
+</body>
+    
+</html>
