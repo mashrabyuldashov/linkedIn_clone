@@ -7,9 +7,9 @@ const ADMIN = (req, res) => {
         return res.redirect('/users')
     }
 
-    const foundUser = read('users.json').find(e => e.id == id)
+    const user = read('users.json').find(e => e.id == id)
 
-    res.render('admin', { foundUser })
+    res.render('admin', { user })
 }
 
 module.exports = {

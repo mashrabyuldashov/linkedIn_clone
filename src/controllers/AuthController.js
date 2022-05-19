@@ -1,3 +1,4 @@
+const { read } = require('../utils/FS')
 const { sign } = require('../utils/jwt')
 
 const LOGIN = (_, res) => {
@@ -5,7 +6,15 @@ const LOGIN = (_, res) => {
 }
 
 const LOGIN_POST = (req, res) => {
-    const { user } = req
+    const { user } = req     
+    const allUsers = read('users.json')
+
+    const users = allUsers.filter(e => e.role == 'user')
+    .map(e => {
+        e.posts = read('posts.json')
+        .filter(p => p.userID == e.id)
+        return e
+    });
 
     if(user.role == 'admin') {
         res.cookie('access_token', sign({ id: user.id, role: user.role }), {
@@ -18,7 +27,7 @@ const LOGIN_POST = (req, res) => {
         res.cookie('access_token', sign({ id: user.id, role: user.role }), {
             maxAge: 40 * 1000
         })
-        res.render('users', { user: user })
+        res.render('users', { user: user, users: users })
     }
 }
 

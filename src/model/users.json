@@ -16,5 +16,14 @@
         "password": "2003",
         "profile_photo": "http://localhost:9000/1651947584021.jfif",
         "role": "user"
+    },
+    {
+        "id": 3,
+        "name": "Alimardon",
+        "last_name": "Doniyorov",
+        "email": "alimardondoniyorov@gmail.com",
+        "password": "2002",
+        "profile_photo": "http://localhost:9000/1651309395125.jfif",
+        "role": "user"
     }
 ]

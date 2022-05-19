@@ -51,10 +51,12 @@
           </div>
           <div class="header__Option">
             <div class="account__avatar">
-              <div class="account__avatar--img"></div>
-              <!--<div class="account__details">R</div>-->                
+              <div class="account__avatar--img">
+                <img style="width: 25px; height: 25px;" src="<%= user.profile_photo%>" alt="">              
+              </div>
             </div>
             <h3>Me</h3>
+
           </div>
         </div>
       </div>
@@ -121,11 +123,13 @@
         <div class="feed__input--Container libd">
           <div class="feed__input--Wrapper">
             <div class="account__avatar">
-              <div class="account__avatar--img"></div>
+              <div class="account__avatar--img">
+                <img style="width: 55px; height: 55px;" src="<%= user.profile_photo%>" alt="">
+              </div>
               <!--<div class="account__details">R</div>-->
             </div>
             <form class="feed__input">
-              <input type="text" placeholder="Start a post"/>
+              <input class="modal_post_input" type="text" placeholder="Start a post"/>
               <button type="submit">Send</button>
             </form>
           </div>
@@ -151,104 +155,63 @@
         </div>
         
         <!-- Post Starts 1-->
-        <div class="post libd promoted">
-          <div class="post__header">
-            <div class="post__brand">
-              <img src="https://cumulusfinserv.herokuapp.com/images/social/facebook/cumulus-cloud-logo.png" />
-            </div>
-            <div class="post__info">
-              <h2 class="promoted__name">Cumulus Financial</h2>
-              <p>Promoted</p>
-            </div>
-          </div>
-
-          <div class="post__body">
-            <div class="post__message">
-              <p>What non-financial benefits could a new job offer that would get you to take a pay cut?</p>
-            </div>
-            <div class="post__creative post__video">
-              <!--<video class="js_post__video post__video--style hidden" autoplay="" loop=""><source class="video__src" src="https://dms.licdn.com/playlist/C4D05AQEW4qrfrHHBeQ/mp4-720p-30fp-crf28/0/1649099799212?e=2147483647&v=beta&t=CcX0HGHwZK49oq81-Ob2ndv1iu-jYrWjCiZSWvoHC-I" type="video/mp4"></video>-->
-              <img class="post__img" src="https://picsum.photos/560?random=2"/>
-            </div>
-            <div class="post__summary">
-              <span class="post__copy">
-                <p>What is non-financial benefits could a new job offer that would get you to take a pay cut?</p>
-                <span class="post__cta--container">
-                  <button class="post__cta">Learn more</button>
-                </span>
-              </span>
-              <span class="post__brand--url">cumulusfinancial.com</span>
-            </div>
-          </div>
-
-
-          <div class="feed__input--Options">
-            <div class="input__Option">
-              <i style="color: gray" class="material-icons"> thumb_up </i>
-              <h4>Like</h4>
-            </div>
-            <div class="input__Option">
-              <i style="color: gray" class="material-icons"> comment </i>
-              <h4>Comment</h4>
-            </div>
-            <div class="input__Option">
-              <i style="color: gray" class="material-icons"> share </i>
-              <h4>Share</h4>
-            </div>
-            <div class="input__Option">
-              <i style="color: gray" class="material-icons"> send </i>
-              <h4>Send</h4>
-            </div>
-          </div>
-        </div>
+        <% users.map((user) => { %>
+            <% user.posts.map((post, index) => { %>
+              <div class="post libd promoted">
+                <div class="post__header">
+                  <div class="post__brand">
+                    <img src="<%= user.profile_photo %>" />
+                  </div>
+                  <div class="post__info">
+                    <h2 class="promoted__name"><%= user.name %> <%= user.last_name %></h2>
+                    <p><%= user.email %></p>
+                  </div>
+                </div>
+      
+                <div class="post__body">
+                  <div class="post__message">
+                    <p><%= post.descreption %></p>
+                  </div>
+                  <div class="post__creative post__video">
+                  
+                      <!-- <video class="js_post__video post__video--style" autoplay="on" loop=""><source class="video__src" src="<%= post.media %>" type="video/mp4"></video> -->
+                  
+                      <img class="post__img" src="<%= post.media %>"/>
+                    
+                  </div>
+                  <div class="post__summary">
+                    <span class="post__copy">
+                      <p>What is non-financial benefits could a new job offer that would get you to take a pay cut?</p>
+                      <span class="post__cta--container">
+                        <button class="post__cta">Learn more</button>
+                      </span>
+                    </span>
+                    <span class="post__brand--url">cumulusfinancial.com</span>
+                  </div>
+                </div>
+      
+                <div class="feed__input--Options">
+                  <div class="input__Option">
+                    <i style="color: gray" class="material-icons"> thumb_up </i>
+                    <h4>Like</h4>
+                  </div>
+                  <div class="input__Option">
+                    <i style="color: gray" class="material-icons"> comment </i>
+                    <h4>Comment</h4>
+                  </div>
+                  <div class="input__Option">
+                    <i style="color: gray" class="material-icons"> share </i>
+                    <h4>Share</h4>
+                  </div>
+                  <div class="input__Option">
+                    <i style="color: gray" class="material-icons"> send </i>
+                    <h4>Send</h4>
+                  </div>
+                </div>
+              </div>
+            <% }) %>
+        <% }) %>
         <!-- Post Ends 1-->
-
-        <!-- Post Starts 2-->
-        <div class="post libd">
-          <div class="post__header">
-            <div class="account__avatar">
-              <div class="account__details">J</div>
-            </div>
-            <div class="post__info">
-              <h2 class="random__name">John Smith</h2>
-              <p>Job Description</p>
-            </div>
-          </div>
-
-          <div class="post__body">
-            <div class="post__message">
-              <p>Freddie Mac is hosting a CreditSmart live virtual event on April 19th, where renters, homebuyers, homeowners and housing professionals can learn about the unique challenges facing communities and how personalized tools can help them achieve financial goals.</p>
-            </div>
-            <div class="post__creative">
-              <img src="https://picsum.photos/560?random=3"/>
-            </div>
-            <div class="post__summary">
-              <p>What non-financial benefits could a new job offer that would get you to take a pay cut?</p>
-            </div>
-          </div>
-
-
-
-          <div class="feed__input--Options">
-            <div class="input__Option">
-              <i style="color: gray" class="material-icons"> thumb_up </i>
-              <h4>Like</h4>
-            </div>
-            <div class="input__Option">
-              <i style="color: gray" class="material-icons"> comment </i>
-              <h4>Comment</h4>
-            </div>
-            <div class="input__Option">
-              <i style="color: gray" class="material-icons"> share </i>
-              <h4>Share</h4>
-            </div>
-            <div class="input__Option">
-              <i style="color: gray" class="material-icons"> send </i>
-              <h4>Send</h4>
-            </div>
-          </div>
-        </div>
-        <!-- Post Ends 2-->
 
       </div>
       <!-- Feed Ends -->
@@ -293,13 +256,21 @@
     </div>
 
     <div class="modal">
-      <form action="/upload/<%= user.id%>" method="POST" enctype="multipart/form-data">
+      <form action="/upload" enctype="multipart/form-data" method="POST">
         <input type="file" name="file">
         <button class="close_btn" type="button">close</button>
         <button class="upload_btn" type="submit">upload photo</button>
       </form>
     </div>
-    
+
+    <div class="post_modal">
+      <form>
+        <input type="text" name="descreption" placeholder="post descreption">
+        <input type="file" name="file">
+        <button type="submit">send post</button>
+      </form>
+    </div>
+
     <script src="/js/users.js"></script>
   </body>
 </html>
