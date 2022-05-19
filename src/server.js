@@ -7,6 +7,8 @@ const fileUpload = require('express-fileupload')
 const router = require('./routes/routes')
 const cors = require('cors')
 
+const PORT = process.env.PORT || 9000
+
 app.set('view engine', 'ejs')
 app.set('views', __dirname + '/views')
 app.use(express.static(__dirname + '/public'))
@@ -20,4 +22,4 @@ app.use(router)
 app.use('/*', (_, res) => res.sendStatus(404));
 
 
-app.listen(9000, console.log(9000))
+app.listen(PORT, console.log(PORT))
